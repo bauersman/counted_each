@@ -52,7 +52,7 @@ module CountedEach
     attr_accessor :output
 
     def initialize
-      output = STDERR
+      self.output = STDERR
     end
   end.new
 
