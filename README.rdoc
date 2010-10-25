@@ -13,8 +13,3 @@ A extension for core Array class adding a #counted_each method that outputs coun
     sleep(0.001)
   end
 
-
-
-== Copyright
-
-Copyright (c) 2010 bauersman. See LICENSE for details.
