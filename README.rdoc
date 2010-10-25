@@ -1,8 +1,13 @@
 = counted_each
 
+A extension for core Array class adding a #counted_each method that outputs count and time to finish iteration to STDERR (or a different IO Stream).
+
 == Usage:
 
   require 'counted_each'
+
+  # optional, default is STDERR
+  CountedEach::Config.output = STDOUT
 
   (0..5000).to_a.counted_each do
     sleep(0.001)
