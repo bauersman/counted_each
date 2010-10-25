@@ -5,9 +5,9 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "counted_each"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
-    gem.email = "andreasb@moviepilot.coim"
+    gem.summary = %Q{Array#each with status output}
+    gem.description = %Q{Array#each with status output}
+    gem.email = "bauerei@gmail.com"
     gem.homepage = "http://github.com/bauersman/counted_each"
     gem.authors = ["bauersman"]
     gem.add_development_dependency "rspec", ">= 1.2.9"
