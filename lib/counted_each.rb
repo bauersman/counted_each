@@ -1,6 +1,10 @@
 module CountedEach
   def counted_each(*args, &block)
-    ::CountedEach::Counter.new(self).iterate(&block)
+    ::CountedEach::Counter.new(self).iterate(false, &block)
+  end
+
+  def counted_each_with_index(*args, &block)
+    ::CountedEach::Counter.new(self).iterate(true, &block)
   end
 
   class Counter
@@ -9,12 +13,12 @@ module CountedEach
       @t_start = nil
     end
 
-    def iterate(&block)
+    def iterate(with_index, &block)
       @total = @list.count
       start
       @list.each_with_index do |item, pos|
         @current = pos
-        block.call(item)
+        with_index ? block.call(item, pos) : block.call(item)
         Config.output.print "   %i/%i Elapsed: %s   Time to Complete: %s       \r" % [pos+1, @total, time_format(elapsed), time_format(to_go)]
         Config.output.flush
       end
